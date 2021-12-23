@@ -20,8 +20,12 @@
             console.log('Perdimos coomunicacion con el servidor');
         });
         socket.emit('mensaje', { nombre: 'Asaek' });
-        socket.on('mensaje', function (mensaje) {
+        socket.on('mensaje-appflutter', function (mensaje) {
             console.log('Escuchando:', mensaje);
+        });
+        socket.on('active-bands', function (mensaje) {
+            console.clear();
+            console.table(mensaje);
         });
     </script>
 </body>
